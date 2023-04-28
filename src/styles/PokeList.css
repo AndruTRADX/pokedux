@@ -1,0 +1,30 @@
+.display-pokemons {
+  width: 100%;
+  max-width: 920px;
+}
+
+.PokeList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 3rem 0 3rem;
+  max-width: 920px;
+}
+
+@media only screen and (max-width: 890px) {
+  .PokeList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .PokeList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .PokeList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,13 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 0 16px 0;
+}
+
+.logo {
+  max-width: 420px;
+  margin-bottom: 3rem;
+}
