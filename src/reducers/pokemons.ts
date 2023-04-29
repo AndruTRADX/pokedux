@@ -13,10 +13,22 @@ interface State {
   pokemonSearch: Pokemon[]
 }
 
-interface Action {
-  type: string
-  payload: any
+interface SetPokemonsAction {
+  type: typeof SET_POKEMONS
+  payload: Pokemon[]
 }
+
+interface SetFavoriteAction {
+  type: typeof SET_FAVORITE
+  payload: number
+}
+
+interface GetSearchAction {
+  type: typeof GET_SEARCH
+  payload: string
+}
+
+type Action = SetPokemonsAction | SetFavoriteAction | GetSearchAction
 
 const initialState: State = {
   pokemons: [],

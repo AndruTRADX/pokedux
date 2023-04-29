@@ -23,7 +23,6 @@ function Searcher():JSX.Element {
       }
       style={{ maxWidth: 920}}
     />
-      
   )
 }
 
