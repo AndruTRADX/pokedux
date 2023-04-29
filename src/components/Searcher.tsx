@@ -17,7 +17,7 @@ function Searcher():JSX.Element {
       onChange={handleSearchValue}
       prefix={<SearchOutlined className="site-form-item-icon" style={{ color: 'rgba(0,0,0,.45)' }} />}
       suffix={
-        <Tooltip title="Automatically search.">
+        <Tooltip title="automatic search">
           <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
         </Tooltip>
       }
