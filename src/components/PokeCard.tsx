@@ -1,6 +1,9 @@
-import { Card, Button, Space, Tag, Divider } from 'antd'
-import { HeartOutlined } from '@ant-design/icons'
+import { Card, Tag, Divider } from 'antd'
 import LazyImage from '../hooks/LazyImage'
+import LikeButton from './LikeButton'
+import { useDispatch } from 'react-redux'
+import { setFavorite } from '../actions'
+import { useState } from 'react'
 
 const typeColors: {[key: string]: string} = {
   bug: 'lime',
@@ -21,24 +24,40 @@ const typeColors: {[key: string]: string} = {
   fairy: 'pink'
 }
 
-function PokeCard({ name, image, types }: any):JSX.Element {
+interface Props {
+  name: string;
+  image: string;
+  types: {type: {name: string}}[];
+  id: number;
+  favorite?: object
+}
+
+function PokeCard({ name, image, types, id }: Props):JSX.Element {
+  const dispatch = useDispatch()
+  
+  const [favoriteLocal, setFavoriteLocal] = useState(false)
+
+  const handleOnFavorite = ()=> {
+    dispatch(setFavorite(id))
+    setFavoriteLocal(!favoriteLocal)
+  }
   
   return (
     <Card 
       title={name} 
-      extra={<Button shape="circle" icon={<HeartOutlined />} size="middle" />}
+      extra={<LikeButton onClick={handleOnFavorite} isFavorite={favoriteLocal} />}
       hoverable
       cover={<LazyImage src={image} alt={name} /> }
     >
       <Divider style={{ marginTop: 0, marginBottom: 16}} />
       
-      <Space direction="horizontal" size="small" style={{ display: 'flex' }} >
+      <div style={{ display: 'flex' }} >
         {
-          types.map((types: any, index: number) => (
+          types.map((types: {type: {name: string}}, index: number) => (
             <Tag color={typeColors[types.type.name]} key={index}>{ types.type.name }</Tag>
           ))
         }
-      </Space>
+      </div>
     </Card>
   )
 }

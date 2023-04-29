@@ -6,7 +6,7 @@ import { setPokemons } from './actions'
 
 import Searcher from './components/Searcher'
 import PokeList, { pokemonsType, setPokemonsType } from './components/PokeList'
-import logo from './assets/logo.svg'
+import NavBar from './components/NavBar'
 import './styles/App.css'
 
 
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       
-      <img src={logo} alt="pokedux" className="logo" ></img>
+      <NavBar />
       
       <Searcher />
       

@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.logo-container {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-font {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 2rem;
+  background-image: conic-gradient(#E6E9ED, #764abc, #434A54);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.navbar-menu {
+  width: 340px;
+}
+
+@media only screen and (max-width: 570px) {
+  .navbar-menu {
+    display: flex;
+    width: auto;
+  }
+}
+
+
