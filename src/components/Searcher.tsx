@@ -7,7 +7,7 @@ function Searcher():JSX.Element {
   const dispatch = useDispatch()
 
   const handleSearchValue = ({ target: { value } }: { target: { value: string } }) => {
-    dispatch(getSearch(value))
+    dispatch(getSearch(value.toLowerCase()))
   }
   
   return (
