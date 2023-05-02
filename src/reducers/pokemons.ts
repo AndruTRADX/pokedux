@@ -1,5 +1,5 @@
 /* eslint-disable no-case-declarations */
-import { GET_SEARCH, SET_FAVORITE, SET_POKEMONS } from '../actions/types'
+import { GET_SEARCH, SET_FAVORITE, SET_MODAL, SET_POKEMONS } from '../actions/types'
 
 interface Pokemon {
   favorite?: boolean
@@ -11,29 +11,40 @@ interface State {
   pokemons: Pokemon[]
   favorite: Pokemon[]
   pokemonSearch: Pokemon[]
+  pokemonOnModal: Pokemon
 }
 
-interface SetPokemonsAction {
+export interface SetPokemonsAction {
   type: typeof SET_POKEMONS
   payload: Pokemon[]
 }
 
-interface SetFavoriteAction {
+export interface SetFavoriteAction {
   type: typeof SET_FAVORITE
   payload: number
 }
 
-interface GetSearchAction {
+export interface GetSearchAction {
   type: typeof GET_SEARCH
   payload: string
 }
 
-type Action = SetPokemonsAction | SetFavoriteAction | GetSearchAction
+export interface SetModalAction {
+  type: typeof SET_MODAL
+  payload: number
+}
+
+
+type Action = SetPokemonsAction | SetFavoriteAction | GetSearchAction | SetModalAction
 
 const initialState: State = {
   pokemons: [],
   favorite: [],
-  pokemonSearch: []
+  pokemonSearch: [],
+  pokemonOnModal: {
+    id: 0,
+    name: ''
+  }
 }
 
 const findPokemon = (pokemonList: Pokemon[], id: number): Pokemon => {
@@ -63,6 +74,10 @@ export const pokemonsReducer = (state: State = initialState, action: Action): St
     case GET_SEARCH:
       const filteredPokemons = state.pokemons.filter(pokemon => pokemon.name.includes(action.payload))
       return { ...state, pokemonSearch: filteredPokemons }
+
+    case SET_MODAL:
+      const pokemonOnModal = findPokemon(state.pokemons, action.payload)
+      return { ...state , pokemonOnModal: pokemonOnModal }
 
     default:
       return state

@@ -5,14 +5,16 @@ import { getPokemonDetails, getPokemons } from './api'
 import { setPokemons } from './actions'
 
 import Searcher from './components/Searcher'
-import PokeList, { pokemonsType, setPokemonsType } from './components/PokeList'
+import PokeList from './components/PokeList'
 import NavBar from './components/NavBar'
 import './styles/App.css'
+import { pokemonsType } from './types/types'
+import { SetPokemonsAction } from './reducers/pokemons'
 
 
 type AppType = {
   pokemons: pokemonsType[],
-  setPokemons: setPokemonsType,
+  setPokemons: SetPokemonsAction,
 }
 
 function App() {

@@ -3,22 +3,10 @@ import '../styles/PokeList.css'
 import { Col, Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 import { useSelector } from 'react-redux'
-
-export type pokemonsType = {
-  name: string
-  url: string
-  id: number
-  sprites: { front_default: string}
-  types: { type: { name: string } }[]
-}
+import { pokemonsType } from '../types/types'
 
 interface RootState {
   pokemonSearch: pokemonsType[]
-}
-
-export type setPokemonsType = (payload: object) => {
-  type: string;
-  payload: object;
 }
 
 interface Props {

@@ -1,4 +1,4 @@
-import { GET_SEARCH, SET_FAVORITE, SET_POKEMONS } from './types'
+import { GET_SEARCH, SET_FAVORITE, SET_MODAL, SET_POKEMONS } from './types'
 
 export const setPokemons = (payload: object) => ({
   type: SET_POKEMONS,
@@ -12,6 +12,11 @@ export const setFavorite = (payload: number) => ({
 
 export const getSearch = (payload: string) => ({
   type: GET_SEARCH,
+  payload,
+})
+
+export const setOnModal = (payload: number) => ({
+  type: SET_MODAL,
   payload,
 })
 
