@@ -25,7 +25,7 @@ const PokeModal = ({ name, visible, handleOnModal}: Props):JSX.Element => {
         onCancel={handleOnModal} 
         onOk={handleOnModal}
         footer={
-          <Button key="back" onClick={handleOnModal} type="primary" >Return</Button>
+          <Button key="back" onClick={handleOnModal} >Return</Button>
         }
       >
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
