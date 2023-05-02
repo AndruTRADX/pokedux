@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { pokemonsType } from '../components/PokeList'
+import { pokemonsType } from '../types/types'
 
 const getPokemons = async () => {
   try {
