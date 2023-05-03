@@ -11,7 +11,7 @@ const items: MenuProps['items'] = [
   },
   {
     label: (
-      <a href="https://andrutradx.github.io/AndruTRADX/" target="_blank" rel="noopener noreferrer">
+      <a href="https://andrutradx.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
         My Portfolio 
       </a>
     ),

@@ -3,7 +3,7 @@ import LazyImage from '../hooks/LazyImage'
 import LikeButton from './LikeButton'
 import { useDispatch } from 'react-redux'
 import { setFavorite, setOnModal } from '../actions'
-import { useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import PokeModal from './PokeModal'
 import { typeColors } from '../types/types'
 
@@ -22,7 +22,8 @@ function PokeCard({ name, image, types, id }: Props):JSX.Element {
   const [favoriteLocal, setFavoriteLocal] = useState(false)
   const [visible, setVisible] = useState(false)
 
-  const handleOnFavorite = ()=> {
+  const handleOnFavorite = (event: MouseEvent<HTMLButtonElement>)=> {
+    event.stopPropagation()
     dispatch(setFavorite(id))
     setFavoriteLocal(!favoriteLocal)
   }

@@ -3,7 +3,7 @@ import { HeartFilled, HeartOutlined } from '@ant-design/icons'
 
 interface Props {
   isFavorite?: boolean
-  onClick?: () => void
+  onClick?: any
 }
 
 function LikeButton({ isFavorite, onClick }: Props):JSX.Element {
